@@ -1,0 +1,14 @@
+---
+- name: Install neofetch
+  hosts: my_servers
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: 'yes'
+
+    - name: Install neofetch package
+      apt:
+        name: neofetch
+        state: present
+...
