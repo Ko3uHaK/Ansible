@@ -1,6 +1,6 @@
 ---
 - name: Check if Docker and Docker Compose are not installed
-  hosts: my_servers
+  hosts: node
   gather_facts: true
 
   tasks:
@@ -18,4 +18,5 @@
     debug:
       msg: "Docker or Docker Compose are already installed on this server"
     when: docker_check.rc == 0 or docker_compose_check.rc == 0
+
 ...
